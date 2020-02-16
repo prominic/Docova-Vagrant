@@ -58,10 +58,10 @@
     
 - name: Stop Apache which is installed as a dependency of Composer
   service:
-    name: httpd
+    name: apache2
     state: stopped
 
 - name: Enable service httpd, and not touch the state
   service:
-    name: httpd
+    name: apache2
     enabled: no
