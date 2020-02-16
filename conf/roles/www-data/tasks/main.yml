@@ -41,3 +41,17 @@
   name: "Output of setUpDOCOVA"
   debug:
     msg: "{{ result.stdout }}"
+- 
+  become: true
+  name: "Install Composer"
+  register: resultc
+  args: 
+    chdir: /var/html/www/docova
+  shell: |-
+      composer install << EOF
+    
+      EOF
+- 
+  name: "Output of Composer"
+  debug:
+    msg: "{{ resultc.stdout }}"
