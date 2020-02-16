@@ -39,8 +39,8 @@ class Hosts
     config.ssh.forward_agent = true
     config.ssh.forward_x11 = true
     config.vm.boot_timeout = 900
-    config.ssh.password = DocProm2020@!
-    config.ssh.username = docadmin
+    config.ssh.password = 'DocProm2020@!'
+    config.ssh.username = 'docadmin'
 
     # Set VirtualBox as provider
     config.vm.provider 'virtualbox'
