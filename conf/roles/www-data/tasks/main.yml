@@ -1,0 +1,43 @@
+--- 
+- 
+  lineinfile: 
+    dest: /var/html/www/docova/app/config/parameters.yml
+    line: "{{ item.line }}"
+    regexp: "{{ item.regexp }}"
+  name: "Update Docova config file"
+  notify: 
+    - "restart nginx"
+    - "restart php7.1-fpm"
+  with_items: 
+    - 
+      line: "    database_driver: pdo_mysql"
+      regexp: "database_driver:"
+    - 
+      line: "    database_port: 3306"
+      regexp: "database_port:"
+    - 
+      line: "    database_name: {{database_name}}"
+      regexp: "database_name:"
+    - 
+      line: "    database_user: {{database_user}}"
+      regexp: "database_user:"
+    - 
+      line: "    database_password: {{database_password}}"
+      regexp: "database_password:"
+    - 
+      line: "    document_root: {{document_root}}"
+      regexp: "document_root:"
+- 
+  become: true
+  name: "Running setUpDOCOVA"
+  register: result
+  args: 
+    chdir: /var/html/www/docova
+  shell: |-
+      bash /var/html/www/docova/setUpDOCOVA.sh << EOF
+      y
+      EOF
+- 
+  name: "Output of setUpDOCOVA"
+  debug:
+    msg: "{{ result.stdout }}"

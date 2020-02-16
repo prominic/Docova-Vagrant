@@ -1,0 +1,14 @@
+# Variables for Role Certbot certs.
+certbot_create_if_missing: false
+certbot_create_method: standalone
+certbot_admin_email: "{{ mailer_user }}"
+certbot_create_standalone_stop_services:
+  - nginx
+apache_vhosts:
+    - {servername: "{{ id }}", documentroot: "/var/html/www/docova/web"}
+php_versions_debian:
+  - php5.6-common
+  - php7.0-common
+  - php7.1-common
+  - php7.2-common
+  - php7.3-common

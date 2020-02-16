@@ -1,0 +1,11 @@
+--- 
+- 
+  become: true
+  name: "Update nginx confs for Docova + PHP"
+  template: "src=../templates/default-site.conf dest=/etc/nginx/sites-available/{{ id }} owner=www-data group=www-data mode=0644"
+- 
+  become: true
+  file: "src=/etc/nginx/sites-available/{{ id }} dest=/etc/nginx/sites-enabled/{{ id }} owner=www-data group=www-data state=link"
+  name: "Enable site"
+  notify: 
+    - "restart nginx"

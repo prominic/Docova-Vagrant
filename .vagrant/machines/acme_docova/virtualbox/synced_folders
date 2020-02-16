@@ -1,0 +1,1 @@
+{"virtualbox":{"/vagrant":{"type":null,"owner":"vagrant","group":"vagrant","mount_options":["uid=1000","gid=1000"],"guestpath":"/vagrant","hostpath":"/root/Docova-Vagrant/conf","disabled":false,"__vagrantfile":true}}}
