@@ -2,12 +2,12 @@
 - 
   apt: 
     name: composer
-  name: "composer"
+  name: "Installing Composer"
 - 
   become: true
   name: "Update nginx confs for Docova + PHP"
   template: "src=../templates/default-site.conf dest=/etc/nginx/sites-available/{{ id }} owner=www-data group=www-data mode=0644"
-- name: Creating Dev Priofiler Folder
+- name: Creating Dev Folder Symfony
   file:
     path: /var/html/www/docova/var/cache/dev/profiler
     state: directory
