@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/prominic/saas-autoinstall-vagrant-packer-example/">
+  <a href="https://github.com/prominic/Docova-Vagrant/">
     <img src="conf/wiki/images/Prom.jpg" alt="Logo" width="200" height="100">
   </a>
 
@@ -10,14 +10,14 @@
   <p align="center">
     An README to jumpstart your build of the Docova Bundle
     <br />
-    <a href="https://github.com/prominic/saas-autoinstall-vagrant-packer-example/"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/prominic/Docova-Vagrant/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/prominic/saas-autoinstall-vagrant-packer-example/">View Demo</a>
+    <a href="https://github.com/prominic/Docova-Vagrant/">View Demo</a>
     ·
-    <a href="https://github.com/prominic/saas-autoinstall-vagrant-packer-example/issues">Report Bug</a>
+    <a href="https://github.com/prominic/Docova-Vagrant/issues">Report Bug</a>
     ·
-    <a href="https://github.com/prominic/saas-autoinstall-vagrant-packer-example/issues">Request Feature</a>
+    <a href="https://github.com/prominic/Docova-Vagrant/issues">Request Feature</a>
   </p>
 </p>
 
@@ -26,13 +26,13 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#saas-autoinstall-vagrant-packer-example)
+* [About the Project](#Docova-Vagrant)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#downloading-docova-project-to-a-local-folder)
-    * [Mac OS X](https://github.com/prominic/saas-autoinstall-vagrant-packer-example/blob/master/MacMojaveReadme.md) -- Quick Start
-    * [Windows](https://github.com/prominic/saas-autoinstall-vagrant-packer-example/blob/master/Win10ReadMe.md) -- Quick Start
+    * [Mac OS X](https://github.com/prominic/Docova-Vagrant/blob/master/MacMojaveReadme.md) -- Quick Start
+    * [Windows](https://github.com/prominic/Docova-Vagrant/blob/master/Win10ReadMe.md) -- Quick Start
 * [Rebuilding](#rebuilding-the-project)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
@@ -42,8 +42,8 @@
 
 
 
-# saas-autoinstall-vagrant-packer-example
-Primary goal is to use Vagrant on Windows, Mac, and Linux to deploy the latest Docova Bundle in an Ubuntu 18.04 VM, in order to run regression tests and automating installation via API call from Docova Web Services.
+# Docova-Vagrant
+Primary goal is to use Vagrant on Windows, Mac, and Linux to deploy the latest Docova Bundle in an Ubuntu 18.04 VM, in order to run regression tests and automating installation via API call from Docova Web Services. This uses a Specialized Packer Build that cuts down deployment time.
 
 We will keep the Master branch as the core of the project and any application that we want to Automate/Regression Test we will branch in order to compartmentalize the project for use with mutiple applications.
  
@@ -124,7 +124,7 @@ sudo apt-get install virtualbox vagrant git-core -y
 Open up a terminal and perform the following git command in order to save the Project to a local folder:
 
 ```shell
-git clone https://github.com/prominic/saas-autoinstall-vagrant-packer-example.git
+git clone https://github.com/prominic/Docova-Vagrant.git
 
 ```
 ### Configuring the Environment
@@ -134,7 +134,7 @@ Please set the configuration file with the correct, Network and Memory and CPU s
 If you want to change to a different branch for different Application Builds, change the branch variable to that of an existing branch in this repo, in the Hosts.yml
 
 ```
-cd saas-autoinstall-vagrant-packer-example
+cd Docova-Vagrant
 vi Hosts.yml
 ```
 ![GitHub Logo](/conf/wiki/images/hosts.yml.png)
@@ -169,230 +169,192 @@ vagrant up
 
 ```powershell
  vagrant up
-Bringing machine 'Docova-2-new' up with 'virtualbox' provider...
-==> Docova-2-new: Checking if box 'peru/ubuntu-18.04-server-amd64' version '20191101.01' is up to date...
-==> Docova-2-new: Running provisioner: shell...
-    Docova-2-new: Running: /tmp/vagrant-shell20191113-8943-8ant21.sh
-    Docova-2-new: A Branch is not specified, Skipping addition of branch
-==> Docova-2-new: Running provisioner: shell...
-    Docova-2-new: Running: /tmp/vagrant-shell20191113-8943-6obskj.sh
-    Docova-2-new: alias ..='cd ..'
-    Docova-2-new: alias ...='cd ../..'
-    Docova-2-new: alias h='cd ~'
-    Docova-2-new: alias c='clear'
-    Docova-2-new: alias ll='ls -la'
-    Docova-2-new: Reading package lists...
-    Docova-2-new: Building dependency tree...
-    Docova-2-new:
-    Docova-2-new: Reading state information...
-    Docova-2-new: python-apt is already the newest version (1.6.4).
-    Docova-2-new: The following packages were automatically installed and are no longer required:
-    Docova-2-new:   apache2 apache2-bin apache2-data apache2-utils dbconfig-common
-    Docova-2-new:   dbconfig-mysql javascript-common libapr1 libaprutil1 libaprutil1-dbd-sqlite3
-    Docova-2-new:   libaprutil1-ldap libjs-jquery libjs-sphinxdoc libjs-underscore liblua5.2-0
-    Docova-2-new:   libpcre2-8-0 libsodium23
-    Docova-2-new: Use 'sudo apt autoremove' to remove them.
-    Docova-2-new: 0 upgraded, 0 newly installed, 0 to remove and 29 not upgraded.
-==> Docova-2-new: Running provisioner: ansible_local...
-    Docova-2-new: Running ansible-playbook...
+==> vagrant: A new version of Vagrant is available: 2.2.7 (installed version: 2.2.4)!
+==> vagrant: To upgrade visit: https://www.vagrantup.com/downloads.html
+
+Bringing machine 'acme_docova' up with 'virtualbox' provider...
+==> acme_docova: Box 'Makr44/Docova-Ubuntu-18.04' could not be found. Attempting to find and install...
+    acme_docova: Box Provider: virtualbox
+    acme_docova: Box Version: >= 0
+==> acme_docova: Loading metadata for box 'Makr44/Docova-Ubuntu-18.04'
+    acme_docova: URL: https://vagrantcloud.com/Makr44/Docova-Ubuntu-18.04
+==> acme_docova: Adding box 'Makr44/Docova-Ubuntu-18.04' (v1) for provider: virtualbox
+    acme_docova: Downloading: https://vagrantcloud.com/Makr44/boxes/Docova-Ubuntu-18.04/versions/1/providers/virtualbox.box
+    acme_docova: Download redirected to host: vagrantcloud-files-production.s3.amazonaws.com
+==> acme_docova: Successfully added box 'Makr44/Docova-Ubuntu-18.04' (v1) for 'virtualbox'!
+==> acme_docova: Importing base box 'Makr44/Docova-Ubuntu-18.04'...
+==> acme_docova: Matching MAC address for NAT networking...
+==> acme_docova: Checking if box 'Makr44/Docova-Ubuntu-18.04' version '1' is up to date...
+==> acme_docova: Setting the name of the VM: acme.docova.m4kr.net
+==> acme_docova: Pruning invalid NFS exports. Administrator privileges will be required...
+==> acme_docova: Clearing any previously set network interfaces...
+==> acme_docova: Specific bridge '1) Bridge' not found. You may be asked to specify
+==> acme_docova: which network to bridge to.
+==> acme_docova: Available bridged network interfaces:
+1) viifbr0
+2) enp7s0f0
+3) enp7s0f1
+4) enp8s0f0
+5) enp8s0f1
+6) enp2s0
+7) enp4s0
+==> acme_docova: When choosing an interface, it is usually the one that is
+==> acme_docova: being used to connect to the internet.
+    acme_docova: Which interface should the network bridge to? 7
+==> acme_docova: Preparing network interfaces based on configuration...
+    acme_docova: Adapter 1: nat
+    acme_docova: Adapter 2: bridged
+==> acme_docova: Forwarding ports...
+    acme_docova: 22 (guest) => 2222 (host) (adapter 1)
+==> acme_docova: Running 'pre-boot' VM customizations...
+==> acme_docova: Booting VM...
+==> acme_docova: Waiting for machine to boot. This may take a few minutes...
+    acme_docova: SSH address: 127.0.0.1:2222
+    acme_docova: SSH username: vagrant
+    acme_docova: SSH auth method: private key
+    acme_docova:
+    acme_docova: Vagrant insecure key detected. Vagrant will automatically replace
+    acme_docova: this with a newly generated keypair for better security.
+    acme_docova:
+    acme_docova: Inserting generated public key within guest...
+    acme_docova: Removing insecure key from the guest if it's present...
+    acme_docova: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> acme_docova: Machine booted and ready!
+[acme_docova] GuestAdditions 6.0.8 running --- OK.
+==> acme_docova: Checking for guest additions in VM...
+==> acme_docova: Setting hostname...
+==> acme_docova: Configuring and enabling network interfaces...
+==> acme_docova: Mounting shared folders...
+    acme_docova: /vagrant => /root/Docova-Vagrant/conf
+==> acme_docova: Running provisioner: shell...
+    acme_docova: Running: /tmp/vagrant-shell20200216-18728-ku2h87.sh
+    acme_docova: A Branch is not specified, Skipping addition of branch
+==> acme_docova: Running provisioner: shell...
+    acme_docova: Running: /tmp/vagrant-shell20200216-18728-wkvm23.sh
+    acme_docova: alias ..='cd ..'
+    acme_docova: alias ...='cd ../..'
+    acme_docova: alias h='cd ~'
+    acme_docova: alias c='clear'
+    acme_docova: alias ll='ls -la'
+    acme_docova: Reading package lists...
+    acme_docova: Building dependency tree...
+    acme_docova:
+    acme_docova: Reading state information...
+    acme_docova: The following packages were automatically installed and are no longer required:
+    acme_docova:   apache2 apache2-bin apache2-data apache2-utils dbconfig-common
+    acme_docova:   dbconfig-mysql javascript-common libapr1 libaprutil1 libaprutil1-dbd-sqlite3
+    acme_docova:   libaprutil1-ldap libjs-jquery libjs-sphinxdoc libjs-underscore liblua5.2-0
+    acme_docova:   libsodium23
+    acme_docova: Use 'sudo apt autoremove' to remove them.
+    acme_docova: Suggested packages:
+    acme_docova:   python-apt-dbg python-apt-doc
+    acme_docova: The following NEW packages will be installed:
+    acme_docova:   python-apt
+    acme_docova: 0 upgraded, 1 newly installed, 0 to remove and 10 not upgraded.
+    acme_docova: Need to get 151 kB of archives.
+    acme_docova: After this operation, 693 kB of additional disk space will be used.
+    acme_docova: Get:1 http://us.archive.ubuntu.com/ubuntu bionic-updates/main amd64 python-apt amd64 1.6.5ubuntu0.2 [151 kB]
+    acme_docova: dpkg-preconfigure: unable to re-open stdin: No such file or directory
+    acme_docova: Fetched 151 kB in 0s (974 kB/s)
+    acme_docova: Selecting previously unselected package python-apt.
+    acme_docova: (Reading database ...
+(Reading database ... 10% database ... 5%
+(Reading database ... 45% database ... 15%
+(Reading database ... 55% database ... 50%
+    acme_docova: (Reading database ... 60%
+    acme_docova: (Reading database ... 65%
+    acme_docova: (Reading database ... 70%
+    acme_docova: (Reading database ... 75%
+    acme_docova: (Reading database ... 80%
+    acme_docova: (Reading database ... 85%
+    acme_docova: (Reading database ... 90%
+    acme_docova: (Reading database ... 95%
+(Reading database ... 97214 files and directories currently installed.)
+    acme_docova: Preparing to unpack .../python-apt_1.6.5ubuntu0.2_amd64.deb ...
+    acme_docova: Unpacking python-apt (1.6.5ubuntu0.2) ...
+    acme_docova: Setting up python-apt (1.6.5ubuntu0.2) ...
+==> acme_docova: Running provisioner: ansible_local...
+    acme_docova: Running ansible-playbook...
 
 PLAY [all] *********************************************************************
 
 TASK [Gathering Facts] *********************************************************
-ok: [Docova-2-new]
+ok: [acme_docova]
 
 TASK [Ensuring Aptitude is installed.] *****************************************
-ok: [Docova-2-new]
+ok: [acme_docova]
 
 TASK [debug] *******************************************************************
-ok: [Docova-2-new] => {
-    "msg": "run_letsencrypt"
+ok: [acme_docova] => {
+    "msg": "run_letsencrypt is set to: False"
 }
 
-TASK [nginx : Update apt cache] ************************************************
-ok: [Docova-2-new]
-
-TASK [nginx : Install nginx] ***************************************************
-ok: [Docova-2-new]
-
-TASK [nginx : Start nginx] *****************************************************
-ok: [Docova-2-new]
-
 TASK [nginx : Update nginx confs for Docova + PHP] *****************************
-ok: [Docova-2-new]
+changed: [acme_docova]
 
 TASK [nginx : Enable site] *****************************************************
-ok: [Docova-2-new]
-
-TASK [mysql : Install mysql] ***************************************************
-changed: [Docova-2-new]
-
-TASK [mysql : Start the MySQL service] *****************************************
-ok: [Docova-2-new]
-
-TASK [mysql : Set root user password] ******************************************
-ok: [Docova-2-new] => (item=docova-new.int.dc-01.m4kr.net)
-ok: [Docova-2-new] => (item=127.0.0.1)
-ok: [Docova-2-new] => (item=:1)
-ok: [Docova-2-new] => (item=localhost)
-
-TASK [mysql : Copy .my.cnf file with root password credentials] ****************
-ok: [Docova-2-new]
+changed: [acme_docova]
 
 TASK [mysql : Create mysql user] ***********************************************
-changed: [Docova-2-new]
+ok: [acme_docova]
 
 TASK [mysql : Create mysql database] *******************************************
-ok: [Docova-2-new]
+changed: [acme_docova]
 
 TASK [mysql : Create mysql database] *******************************************
-changed: [Docova-2-new]
-
-TASK [mysql : Delete anonymous MySQL server user for $server_hostname] *********
-ok: [Docova-2-new]
-
-TASK [mysql : Delete anonymous MySQL server user for localhost] ****************
-ok: [Docova-2-new]
-
-TASK [mysql : Remove the MySQL test database] **********************************
-ok: [Docova-2-new]
-
-TASK [mysql : Update mysql root password for all root accounts] ****************
-ok: [Docova-2-new] => (item=docova-new.int.dc-01.m4kr.net)
-ok: [Docova-2-new] => (item=127.0.0.1)
-ok: [Docova-2-new] => (item=:1)
-ok: [Docova-2-new] => (item=localhost)
-
-TASK [php : Add repository for PHP 7.1] ****************************************
-ok: [Docova-2-new]
-
-TASK [php : Purge PHP version packages (besides the currently chosen php_version).] ***
-changed: [Docova-2-new]
-
-TASK [php : Also purge php-common package if any versions were just purged.] ***
-ok: [Docova-2-new]
-
-TASK [php : Update all packages to the latest version] *************************
-changed: [Docova-2-new]
-
-TASK [php : Setup php-fpm] *****************************************************
-changed: [Docova-2-new]
-
-TASK [php : Add php settings] **************************************************
-ok: [Docova-2-new]
-
-TASK [elasticsearch212 : Ensure Java is installed.] ****************************
-ok: [Docova-2-new]
-
-TASK [elasticsearch212 : Adding Elasticsearch Repository Key for Version 2.1.2] ***
-ok: [Docova-2-new]
-
-TASK [elasticsearch212 : Adding Elasticsearch Repository for Version 2.1.2] ****
-ok: [Docova-2-new]
-
-TASK [elasticsearch212 : Installing Elasticsearch] *****************************
-ok: [Docova-2-new]
-
-TASK [elasticsearch212 : Enable and Start ElasitcSearch] ***********************
-ok: [Docova-2-new]
-
-TASK [elasticsearch212 : Disabling Elasitcsearch from Updating] ****************
-ok: [Docova-2-new]
-
-TASK [www-data : Create webroot] ***********************************************
-ok: [Docova-2-new]
-
-TASK [www-data : Check if Docova directory exists in /var/html/www/docova] *****
-ok: [Docova-2-new]
-
-TASK [www-data : Copying Docova Bundle Zip] ************************************
-ok: [Docova-2-new]
-
-TASK [www-data : Extract Docova] ***********************************************
-skipping: [Docova-2-new]
-
-TASK [www-data : Move Docova install files] ************************************
-skipping: [Docova-2-new]
-
-TASK [www-data : Create document_root] *****************************************
-ok: [Docova-2-new]
-
-TASK [www-data : Check if Docova directory exists in /var/docova/attachments/] ***
-ok: [Docova-2-new]
-
-TASK [www-data : Set Docova Document Permissions] ******************************
-changed: [Docova-2-new] => (item=/var/html/www/docova/src/Docova/DocovaBundle/Agents)
-changed: [Docova-2-new] => (item=/var/html/www/docova/src/Docova/DocovaBundle/Resources/public/css/custom)
-changed: [Docova-2-new] => (item=/var/html/www/docova/src/Docova/DocovaBundle/Resources/images)
-changed: [Docova-2-new] => (item=/var/html/www/docova/src/Docova/DocovaBundle/Resources/public/js/custom)
-changed: [Docova-2-new] => (item=/var/html/www/docova/src/Docova/DocovaBundle/Resources/views/DesignElements)
-changed: [Docova-2-new] => (item=/var/html/www/docova/var/logs)
-changed: [Docova-2-new] => (item=/var/html/www/docova/var/sessions)
-changed: [Docova-2-new] => (item=/var/html/www/docova/var/cache)
-changed: [Docova-2-new] => (item=/var/html/www/docova/web/upload)
-changed: [Docova-2-new] => (item=/var/docova/attachments/)
+changed: [acme_docova]
 
 TASK [www-data : Update Docova config file] ************************************
-ok: [Docova-2-new] => (item={u'regexp': u'database_driver:', u'line': u'    database_driver: pdo_mysql'})
-ok: [Docova-2-new] => (item={u'regexp': u'database_port:', u'line': u'    database_port: 3306'})
-changed: [Docova-2-new] => (item={u'regexp': u'database_name:', u'line': u'    database_name: database_name'})
-changed: [Docova-2-new] => (item={u'regexp': u'database_user:', u'line': u'    database_user: database_user'})
-changed: [Docova-2-new] => (item={u'regexp': u'database_password:', u'line': u'    database_password: database_password'})
-
-TASK [www-data : Setting Autoindex Cron Job] ***********************************
-ok: [Docova-2-new]
-
-TASK [www-data : Setting DailyLifeCycle Cron Job] ******************************
-ok: [Docova-2-new]
+ok: [acme_docova] => (item={u'regexp': u'database_driver:', u'line': u'    database_driver: pdo_mysql'})
+ok: [acme_docova] => (item={u'regexp': u'database_port:', u'line': u'    database_port: 3306'})
+ok: [acme_docova] => (item={u'regexp': u'database_name:', u'line': u'    database_name: docova_db'})
+ok: [acme_docova] => (item={u'regexp': u'database_user:', u'line': u'    database_user: docova_db_user'})
+ok: [acme_docova] => (item={u'regexp': u'database_password:', u'line': u'    database_password: password12'})
+ok: [acme_docova] => (item={u'regexp': u'document_root:', u'line': u'    document_root: /var/docova/attachments'})
 
 TASK [www-data : Running setUpDOCOVA] ******************************************
-changed: [Docova-2-new]
+changed: [acme_docova]
 
-TASK [www-data : Running setUpDOCOVA] ******************************************
-changed: [Docova-2-new]
+TASK [www-data : Output of setUpDOCOVA] ****************************************
+ok: [acme_docova] => {
+    "msg": "--------------------------------------------------------------\nSetup DOCOVA SE\n--------------------------------------------------------------\nWARNING: This process will recreate your DOCOVA SE database\nif it already exists. Only use this option for\nbrand new installations.\nTemporarily override entity data types for table creation.\nentity data type conversion complete\n\nCreating docova_db ...\ndocova_db created\n\nCreating schema ...\nSchema creation complete\n\nRemoving override on entity data types.\nentity data type conversion complete\n\nLoading datafixtures ...\nCompleted loading datafixture\n\nInstalling assets\nAssets installation complete\n\nClearing prod cache\nclear cache completed\n\nClearing dev cache\nclear cache completed\n\n-------------------------------------------------------------"
+}
 
 TASK [letsencrypt : Upgrade System] ********************************************
-
-changed: [Docova-2-new]
+skipping: [acme_docova]
 
 TASK [letsencrypt : Add certbot repository] ************************************
-changed: [Docova-2-new]
+skipping: [acme_docova]
 
 TASK [letsencrypt : Install Certbot's Nginx package] ***************************
-changed: [Docova-2-new]
+skipping: [acme_docova]
 
 TASK [letsencrypt : Check if certificate already exists.] **********************
-ok: [Docova-2-new] => (item={u'servername': u'docova-new.int.dc-01.m4kr.net', u'documentroot': u'/var/html/www/docova/web'})
+skipping: [acme_docova] => (item={u'servername': u'acme.docova.m4kr.net', u'documentroot': u'/var/html/www/docova/web'})
 
 TASK [letsencrypt : Stop services to allow certbot to generate a cert.] ********
-changed: [Docova-2-new] => (item=nginx)
+skipping: [acme_docova] => (item=nginx)
 
-TASK [letsencrypt : Generate new] **********************************************
-changed: [Docova-2-new] => (item={'failed': False, u'stat': {u'exists': False}, 'ansible_loop_var': u'item', 'item': {u'servername': u'docova-new.int.dc-01.m4kr.net', u'documentroot': u'/var/html/www/docova/web'}, u'invocation': {u'module_args': {u'follow': False, u'get_checksum': True, u'path': u'/etc/letsencrypt/live/docova-new.int.dc-01.m4kr.net/cert.pem', u'checksum_algorithm': u'sha1', u'get_md5': False, u'get_mime': True, u'get_attributes': True}}, u'changed': False})
+TASK [letsencrypt : Generate new Certificate request] **************************
+skipping: [acme_docova] => (item={'skip_reason': u'Conditional result was False', 'item': {u'servername': u'acme.docova.m4kr.net', u'documentroot': u'/var/html/www/docova/web'}, 'skipped': True, 'ansible_loop_var': u'item', 'changed': False})
 
 TASK [letsencrypt : Start services after cert has been generated.] *************
-changed: [Docova-2-new] => (item=nginx)
+skipping: [acme_docova] => (item=nginx)
 
 TASK [letsencrypt : Enabling SSL in Nginx] *************************************
-changed: [Docova-2-new] => (item={u'regexp': u'ssl_certificate  /etc/letsencrypt/live/docova-new.int.dc-01.m4kr.net/fullchain.pem;', u'line': u'    #ssl_certificate'})
-changed: [Docova-2-new] => (item={u'regexp': u'ssl_certificate_key /etc/letsencrypt/live/docova-new.int.dc-01.m4kr.net/privkey.pem;', u'line': u'    #ssl_certificate_key'})
-changed: [Docova-2-new] => (item={u'regexp': u'ssl_protocols TLSv1 TLSv1.1 TLSv1.2;', u'line': u'    #ssl_protocols'})
-changed: [Docova-2-new] => (item={u'regexp': u'ssl_ciphers HIGH:!aNULL:!MD5;', u'line': u'    #ssl_ciphers'})
-
-RUNNING HANDLER [www-data : restart php7.1-fpm] ********************************
-changed: [Docova-2-new]
+skipping: [acme_docova] => (item={u'regexp': u'ssl_certificate  /etc/letsencrypt/live/acme.docova.m4kr.net/fullchain.pem;', u'line': u'    #ssl_certificate'})
+skipping: [acme_docova] => (item={u'regexp': u'ssl_certificate_key /etc/letsencrypt/live/acme.docova.m4kr.net/privkey.pem;', u'line': u'    #ssl_certificate_key'})
+skipping: [acme_docova] => (item={u'regexp': u'ssl_protocols TLSv1 TLSv1.1 TLSv1.2;', u'line': u'    #ssl_protocols'})
+skipping: [acme_docova] => (item={u'regexp': u'ssl_ciphers HIGH:!aNULL:!MD5;', u'line': u'    #ssl_ciphers'})
 
 RUNNING HANDLER [letsencrypt : restart nginx] **********************************
-changed: [Docova-2-new]
+skipping: [acme_docova]
 
 PLAY RECAP *********************************************************************
-Docova-2-new               : ok=52   changed=19   unreachable=0    failed=0    skipped=2    rescued=0    ignored=0
+acme_docova                : ok=11   changed=5    unreachable=0    failed=0    skipped=9    rescued=0    ignored=0
 ```
 </p>
 </details>
-
-
-During this process the VM will restart twice, You will be promopted if you have multiple network cards, to select and active network card on your system.
 
 ## Rebuilding the Project
 
@@ -410,7 +372,7 @@ Vagrant commands are highly dependent on the path that your run the commands in.
 | vagrant halt            |                       | Shuts down the VM                                               |                                                               |
 ## Roadmap
 
-See the [open issues](https://github.com/prominic/saas-autoinstall-vagrant-packer-example/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/prominic/Docova-Vagrant/issues) for a list of proposed features (and known issues).
 
 ## Built With
 * [Vagrant](https://www.vagrantup.com/) - Portable Development Environment Suite.
@@ -428,7 +390,7 @@ Please read [CONTRIBUTING.md](https://www.prominic.net) for details on our code 
 
 * **Mark Gilbert** - *Initial work* - [Makr91](https://github.com/Makr91)
 
-See also the list of [contributors](https://github.com/prominic/saas-autoinstall-vagrant-packer-example/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/prominic/Docova-Vagrant/graphs/contributors) who participated in this project.
 
 ## License
 
