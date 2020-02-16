@@ -43,13 +43,13 @@
 
 
 # Docova-Vagrant
-Primary goal is to use Vagrant on Windows, Mac, and Linux to deploy the latest Docova Bundle in an Ubuntu 18.04 VM, in order to run regression tests and automating installation via API call from Docova Web Services. This uses a Specialized Packer Build that cuts down deployment time.
+Primary goal is to use Vagrant on Solaris to deploy the latest Docova Bundle in an Ubuntu 18.04 VM. Vagrant and Customer Specific Variables will be passed along, automating installation via API call from Docova Web Services. This uses a Specialized Packer Build that cuts down deployment time: https://github.com/prominic/Docova-Packer
 
-We will keep the Master branch as the core of the project and any application that we want to Automate/Regression Test we will branch in order to compartmentalize the project for use with mutiple applications.
+We will keep the Master branch as the core of the project and any application that we want to Automate/Regression Test we will branch in order to compartmentalize the project for use with mutiple applications, versions or builds of the Docova Application.
  
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. You MUST have the Vagrant, Virtualbox and Git installed on your machine. Please follow the instructions below for setting up your VM with the pre-requistes. 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes, as well as what will power the build process of the VMs at Prominic.NET. You MUST have the Vagrant, Virtualbox and Git installed on your machine. Please follow the instructions below for setting up your VM with the pre-requistes. 
 
 ### Prerequisites
 
