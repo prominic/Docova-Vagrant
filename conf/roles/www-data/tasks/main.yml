@@ -55,3 +55,13 @@
   name: "Output of Composer"
   debug:
     msg: "{{ resultc.stdout }}"
+    
+- name: Stop Apache which is installed as a dependency of Composer
+  service:
+    name: httpd
+    state: stopped
+
+- name: Enable service httpd, and not touch the state
+  service:
+    name: httpd
+    enabled: no
