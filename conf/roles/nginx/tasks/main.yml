@@ -27,3 +27,13 @@
   name: "Enable site"
   notify: 
     - "restart nginx"
+- name: Removing Default Config
+  file:
+    path: 
+      item: ~
+    state: absent
+  with_items:
+    - /etc/nginx/sites-available/default
+    - /etc/nginx/sites-available/acme.docova.net
+  notify: 
+    - "restart nginx"
