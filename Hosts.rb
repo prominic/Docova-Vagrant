@@ -83,8 +83,8 @@ class Hosts
 
             server.vm.synced_folder folder['map'], folder ['to'],
               type: folder['type'],
-              owner: folder['owner'] ||= 'vagrant',
-              group: folder['group'] ||= 'vagrant',
+              owner: folder['owner'] ||= 'docadmin',
+              group: folder['group'] ||= 'docadmin',
               mount_options: mount_opts
             end
         end        
