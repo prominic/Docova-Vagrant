@@ -9,12 +9,12 @@
   template: "src=../templates/default-site.conf dest=/etc/nginx/sites-available/{{ id }} owner=www-data group=www-data mode=0644"
 - name: Creating Dev Priofiler Folder
   file:
-    create: yes
     path: /var/html/www/docova/var/cache/dev/profiler
     state: directory
     mode: '0755'
     owner: www-data
     group: www-data
+    recurse: yes
 - name: Recursively change ownership of a directory
   file:
     path: /var/html/www/
