@@ -28,13 +28,14 @@
       line: "    document_root: {{document_root}}"
       regexp: "document_root:"
 - 
-  command: "find /var/html/www/docova -type d -exec chmod 0755 {} \\;"
+  command: "sudo find /var/html/www/docova  -type d -exec chmod 0755 {} \;"
+  
   name: "Ensure directories are 0755"
 - 
-  command: "find /var/html/www/docova -type f -exec chmod 0644 {} \\;"
+  command: "find /var/html/www/docova -type f -exec chmod 0644 {} \;"
   name: "Ensure files are 0644"
 - 
-  command: "find /var/html/www/docova/var/logs -type d -exec chmod 0777 {} \\;"
+  command: "sudo find /var/html/www/docova/var/logs  -type d -exec chmod 0777 {} \;"
   name: "Ensure files are 0777"
 - 
   args: 
