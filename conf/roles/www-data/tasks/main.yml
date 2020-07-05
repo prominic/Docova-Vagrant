@@ -83,3 +83,8 @@
   service: 
     enabled: false
     name: apache2
+    
+- name: Restart service Nginx, in all cases
+  service:
+    name: nginx
+    state: restarted
