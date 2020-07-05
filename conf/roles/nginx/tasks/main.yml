@@ -30,8 +30,7 @@
     - "restart nginx"
 - name: Removing Default Config
   file:
-    path: 
-      item: ~
+    path: "{{ item }}"
     state: absent
   with_items:
     - /etc/nginx/sites-available/default
