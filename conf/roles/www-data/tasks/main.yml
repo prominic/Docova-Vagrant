@@ -38,6 +38,10 @@
       
       EOF
 - 
+  debug: 
+    msg: "{{ resultc.stdout }}"
+  name: "Output of Composer"
+- 
   args: 
     chdir: /var/html/www/docova
   become: true
@@ -51,6 +55,10 @@
       y
       EOF
 - 
+  debug: 
+    msg: "{{ result.stdout }}"
+  name: "Output of setUpDOCOVA"
+- 
   command: "sudo find /var/html/www/docova  -type d -exec chmod 0755 {} \\;"
   name: "Ensure directories are 0755"
 - 
@@ -59,14 +67,9 @@
 - 
   command: "sudo find /var/html/www/docova/var/logs  -type d -exec chmod 0777 {} \\;"
   name: "Ensure files are 0777"
-- 
-  debug: 
-    msg: "{{ result.stdout }}"
-  name: "Output of setUpDOCOVA"
-- 
-  debug: 
-    msg: "{{ resultc.stdout }}"
-  name: "Output of Composer"
+  notify: 
+    - "restart nginx"
+    - "restart php7.1-fpm"
 - 
   name: "Stop Apache which is installed as a dependency of Composer"
   service: 
