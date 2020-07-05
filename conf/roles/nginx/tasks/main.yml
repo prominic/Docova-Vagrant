@@ -35,5 +35,7 @@
   with_items:
     - /etc/nginx/sites-available/default
     - /etc/nginx/sites-available/acme.docova.net
+    - /etc/nginx/sites-enabled/default
+    - /etc/nginx/sites-enabled/acme.docova.net
   notify: 
     - "restart nginx"
