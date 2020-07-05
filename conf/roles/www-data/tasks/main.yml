@@ -28,46 +28,52 @@
       line: "    document_root: {{document_root}}"
       regexp: "document_root:"
 - 
-  name: Ensure directories are 0755
-  command: find /var/html/www/docova -type d -exec chmod 0755 {} \;
+  command: "find /var/html/www/docova -type d -exec chmod 0755 {} \\;"
+  name: "Ensure directories are 0755"
 - 
-  name: Ensure files are 0644
-  command: find /var/html/www/docova -type f -exec chmod 0644 {} \;
+  command: "find /var/html/www/docova -type f -exec chmod 0644 {} \\;"
+  name: "Ensure files are 0644"
 - 
+  command: "find /var/html/www/docova/var/logs -type d -exec chmod 0777 {} \\;"
+  name: "Ensure files are 0777"
+- 
+  args: 
+    chdir: /var/html/www/docova
   become: true
   name: "Install Composer"
   register: resultc
-  args: 
-    chdir: /var/html/www/docova
   shell: |-
       composer install << EOF
-    
+      
       EOF
 - 
-  become: true
-  name: "Running setUpDOCOVA"
-  register: result
   args: 
     chdir: /var/html/www/docova
+  become: true
+  name: "Running setUpDOCOVA"
+  notify: 
+    - "restart nginx"
+    - "restart php7.1-fpm"
+  register: result
   shell: |-
       bash /var/html/www/docova/setUpDOCOVA.sh << EOF
       y
       EOF
 - 
-  name: "Output of setUpDOCOVA"
-  debug:
+  debug: 
     msg: "{{ result.stdout }}"
+  name: "Output of setUpDOCOVA"
 - 
-  name: "Output of Composer"
-  debug:
+  debug: 
     msg: "{{ resultc.stdout }}"
-    
-- name: Stop Apache which is installed as a dependency of Composer
-  service:
+  name: "Output of Composer"
+- 
+  name: "Stop Apache which is installed as a dependency of Composer"
+  service: 
     name: apache2
     state: stopped
-
-- name: Enable service httpd, and not touch the state
-  service:
+- 
+  name: "Disable service httpd, and not touch the state"
+  service: 
+    enabled: false
     name: apache2
-    enabled: no
