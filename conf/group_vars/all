@@ -1,4 +1,5 @@
 # Variables for Role Certbot certs.
+stdout_callback: yaml
 certbot_create_if_missing: false
 certbot_create_method: standalone
 certbot_admin_email: "{{ mailer_user }}"
