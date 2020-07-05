@@ -6,8 +6,8 @@
     regexp: "{{ item.regexp }}"
   name: "Update Docova config file"
   notify: 
-    - "restart nginx"
-    - "restart php7.1-fpm"
+  - "restart nginx"
+  - "restart php7.1-fpm"
   with_items: 
     - 
       line: "    database_driver: pdo_mysql"
@@ -71,8 +71,8 @@
   command: "find /var/html/www/docova/var/logs  -type d -exec chmod 0777 {} \\;"
   name: "Ensure files are 0777"
   notify: 
-    - "restart nginx"
-    - "restart php7.1-fpm"
+  - "restart nginx"
+  - "restart php7.1-fpm"
 - 
   name: "Stop Apache which is installed as a dependency of Composer"
   service: 
