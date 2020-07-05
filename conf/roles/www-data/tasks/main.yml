@@ -28,6 +28,22 @@
       line: "    document_root: {{document_root}}"
       regexp: "document_root:"
 - 
+  name: Ensure directories are 0755
+  command: find /var/html/www/docova -type d -exec chmod 0755 {} \;
+- 
+  name: Ensure files are 0644
+  command: find /var/html/www/docova -type f -exec chmod 0644 {} \;
+- 
+  become: true
+  name: "Install Composer"
+  register: resultc
+  args: 
+    chdir: /var/html/www/docova
+  shell: |-
+      composer install << EOF
+    
+      EOF
+- 
   become: true
   name: "Running setUpDOCOVA"
   register: result
@@ -41,16 +57,6 @@
   name: "Output of setUpDOCOVA"
   debug:
     msg: "{{ result.stdout }}"
-- 
-  become: true
-  name: "Install Composer"
-  register: resultc
-  args: 
-    chdir: /var/html/www/docova
-  shell: |-
-      composer install << EOF
-    
-      EOF
 - 
   name: "Output of Composer"
   debug:
