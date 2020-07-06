@@ -45,13 +45,13 @@
   with_items: 
     - 
       line: "listen              443 ssl;"
-      regexp: "      #listen              443 ssl;"
+      regexp: "^#listen              443 ssl;"
     - 
       line: "ssl_certificate  /etc/letsencrypt/live/{{ id }}/fullchain.pem;"
-      regexp: "    #ssl_certificate"
+      regexp: "    #ssl_certificate "
     - 
       line: "ssl_certificate_key /etc/letsencrypt/live/{{ id }}/privkey.pem;"
-      regexp: "    #ssl_certificate_key"
+      regexp: "    #ssl_certificate_key "
     - 
       line: "ssl_protocols TLSv1 TLSv1.1 TLSv1.2;"
       regexp: "    #ssl_protocols"
