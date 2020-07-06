@@ -31,20 +31,6 @@
   args: 
     chdir: /var/html/www/docova
   become: true
-  name: "Install Composer"
-  register: resultc
-  shell: |-
-      composer install << EOF
-      
-      EOF
-- 
-  debug: 
-    msg: "{{ resultc.stdout }}"
-  name: "Output of Composer"
-- 
-  args: 
-    chdir: /var/html/www/docova
-  become: true
   name: "Running setUpDOCOVA"
   notify: 
     - "restart nginx"
