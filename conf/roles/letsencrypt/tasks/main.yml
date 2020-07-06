@@ -1,17 +1,5 @@
 --- 
 - 
-  apt: "upgrade=dist update_cache=yes"
-  name: "Upgrade System"
-- 
-  apt_repository: 
-    repo: "ppa:certbot/certbot"
-  name: "Add certbot repository"
-- 
-  apt: 
-    name: python-certbot-nginx
-    state: present
-  name: "Install Certbot's Nginx package"
-- 
   name: "Check if certificate already exists."
   register: letsencrypt_cert
   stat: 
