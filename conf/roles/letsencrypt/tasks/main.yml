@@ -49,14 +49,14 @@
     - "restart php7.1-fpm"
   with_items: 
     - 
-      line: "    #ssl_certificate"
-      regexp: "ssl_certificate  /etc/letsencrypt/live/{{ id }}/fullchain.pem;"
+      line: "ssl_certificate  /etc/letsencrypt/live/{{ id }}/fullchain.pem;"
+      regexp: "    #ssl_certificate"
     - 
-      line: "    #ssl_certificate_key"
-      regexp: "ssl_certificate_key /etc/letsencrypt/live/{{ id }}/privkey.pem;"
+      line: "ssl_certificate_key /etc/letsencrypt/live/{{ id }}/privkey.pem;"
+      regexp: "    #ssl_certificate_key"
     - 
-      line: "    #ssl_protocols"
-      regexp: "ssl_protocols TLSv1 TLSv1.1 TLSv1.2;"
+      line: "ssl_protocols TLSv1 TLSv1.1 TLSv1.2;"
+      regexp: "    #ssl_protocols"
     - 
-      line: "    #ssl_ciphers"
-      regexp: "ssl_ciphers HIGH:!aNULL:!MD5;"
+      line: "ssl_ciphers HIGH:!aNULL:!MD5;"
+      regexp: "    #ssl_ciphers"
