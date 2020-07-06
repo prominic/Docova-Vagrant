@@ -44,6 +44,9 @@
     - "restart php7.1-fpm"
   with_items: 
     - 
+      line: "listen              443 ssl;"
+      regexp: "      #listen              443 ssl;"
+    - 
       line: "ssl_certificate  /etc/letsencrypt/live/{{ id }}/fullchain.pem;"
       regexp: "    #ssl_certificate"
     - 
