@@ -10,5 +10,5 @@
 	<clientlicensecode><![CDATA[ {{ clientlicensecode }} ]]></clientlicensecode>
 	<clientcompanyname><![CDATA[ {{ clientcompanyname}} ]]></clientcompanyname>
 	<clientnumberofusers><![CDATA[ {{ clientnumberofusers }} ]]></clientnumberofusers>
-	<clientdomain><![CDATA[ {{clientdomain}} ]]></clientdomain>
+	<clientdomain><![CDATA[ {{ clientdomain }} ]]></clientdomain>
 </configuration>
