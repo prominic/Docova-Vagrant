@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<clientadminuser><![CDATA[ {{ clientadminuser }} ]]></clientadminuser>
+	<clientadminfirstname><![CDATA[ {{ clientadminfirstname }} ]]></clientadminfirstname>
+	<clientadminlastname><![CDATA[ {{ clientadminuser }} ]]></clientadminlastname>
+	<clientadmindisplayname><![CDATA[ {{ clientadmindisplayname }} ]]></clientadmindisplayname>
+	<clientadminemail><![CDATA[ {{ clientadminemail }} ]]></clientadminemail>
+	<clientadminpass><![CDATA[ {{ clientadminpass }} ]]></clientadminpass>
+	<docovasepass><![CDATA[ {{ clientadminpass }}]]></docovasepass>
+	<clientlicensecode><![CDATA[ {{ clientlicensecode }} ]]></clientlicensecode>
+	<clientcompanyname><![CDATA[ {{ clientcompanyname}} ]]></clientcompanyname>
+	<clientnumberofusers><![CDATA[ {{ clientnumberofusers }} ]]></clientnumberofusers>
+	<clientdomain><![CDATA[ {{clientdomain}} ]]></clientdomain>
+</configuration>
