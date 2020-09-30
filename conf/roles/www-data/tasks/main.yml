@@ -31,7 +31,7 @@
 - 
   become: true
   name: "Update nginx confs for Docova + PHP"
-  template: "src=../templates/init_client_instance.xml dest=/var/www/html/docova/ owner=www-data group=www-data mode=0644"
+  template: "src=../templates/init_client_instance.xml dest=/var/html/www/docova/ owner=www-data group=www-data mode=0644"
 - 
   args: 
     chdir: /var/html/www/docova
