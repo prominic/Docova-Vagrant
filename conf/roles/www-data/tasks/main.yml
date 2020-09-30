@@ -27,7 +27,10 @@
     - 
       line: "    document_root: {{document_root}}"
       regexp: "document_root:"
-      
+- 
+  become: true
+  name: "Update nginx confs for Docova + PHP"
+  template: "src=../templates/init_client_instance.xml dest=/var/html/www/docova/web owner=www-data group=www-data mode=0644"      
 - 
   become: true
   name: "Update nginx confs for Docova + PHP"
