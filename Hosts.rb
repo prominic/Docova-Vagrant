@@ -60,7 +60,7 @@ class Hosts
           end
         end
 
-        server.vm.hostname = host['identifier']
+        server.vm.hostname = host['name']
         ## Need to make check for if IP, Mac address, Netmask or Gateway not Set
 
         server.vm.network "public_network", ip: host['ip'], bridge: "1) Bridge", auto_config: true, :mac => host['mac'], :netmask => host['netmask'], gateway:  host['gateway']
