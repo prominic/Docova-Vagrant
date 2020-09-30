@@ -49,7 +49,7 @@ class Hosts
     settings['hosts'].each_with_index do |host, index|
       autostart = host.has_key?('autostart') && host['autostart']
 
-      config.vm.define "#{host['name']}", autostart: autostart do |server|
+      config.vm.define "#{host['identifier']}", autostart: autostart do |server|
         server.vm.box = host['box'] || 'Makr44/Docova-Ubuntu-18.04'
 
         if settings.has_key?('boxes')
