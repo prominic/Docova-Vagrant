@@ -6,7 +6,7 @@
 	<clientadmindisplayname><![CDATA[{{clientadmindisplayname}}]]></clientadmindisplayname>
 	<clientadminemail><![CDATA[{{clientadminemail}}]]></clientadminemail>
 	<clientadminpass><![CDATA[{{clientadminpass}}]]></clientadminpass>
-	<docovasepass><![CDATA[{{clientadminpass}}]]></docovasepass>
+	<docovasepass><![CDATA[{{docovasepass}}]]></docovasepass>
 	<clientlicensecode><![CDATA[{{clientlicensecode}}]]></clientlicensecode>
 	<clientcompanyname><![CDATA[{{clientcompanyname}}]]></clientcompanyname>
 	<clientnumberofusers><![CDATA[{{clientnumberofusers}}]]></clientnumberofusers>
