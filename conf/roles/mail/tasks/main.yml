@@ -1,1 +1,7 @@
 --- 
+- 
+  apt: 
+    name: 
+      - sendmail
+  name: "Installing Sendmail"
+  retries: 5
