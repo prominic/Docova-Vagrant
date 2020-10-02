@@ -37,7 +37,7 @@
   shell: "Generating init_client_preferences with the following parameters: User: {{ clientadminuser }} Pass: {{clientadminpass}} "
 - 
   name: Set String
-    set_fact:
+  set_fact:
     string: {{ clientadminuser }}
 - 
   args: 
