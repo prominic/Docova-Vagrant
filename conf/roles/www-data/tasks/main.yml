@@ -32,13 +32,9 @@
   name: "Generating init_client_preferences with the following parameters: User: {{ clientadminuser }} Pass: {{clientadminpass}} "
   template: "src=../templates/init_client_instance.xml dest=/var/html/www/docova/ owner=www-data group=www-data mode=0644"
 - 
-  become: true
-  name: ""
-  shell: "Generating init_client_preferences with the following parameters: User: {{ clientadminuser }} Pass: {{clientadminpass}} "
-- 
-  name: Set String
-  set_fact:
-    string: {{ clientadminuser }}
+  debug: 
+    msg: "Docova SE Pass: {{docovasepass}}"
+  name: "Docova SE Pass"
 - 
   args: 
     chdir: /var/html/www/docova
