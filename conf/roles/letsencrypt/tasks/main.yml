@@ -51,3 +51,13 @@
   service:
     name: nginx
     state: restarted
+    
+- name: Send back VM completion request to Docova.com
+  uri:
+    url: https://docova.com/wp-admin/admin-ajax.php
+    method: POST
+    body: "action=spinupupdate&token=27759b020fc7261abc6138675fc67626&instanceurl={{name}}&trackerid=XXXXXXX&iscomplete=yes"
+    status_code: 302
+    headers:
+      Content-Type: "application/x-www-form-urlencoded"
+  register: status
