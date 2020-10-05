@@ -55,11 +55,43 @@
 - 
   become: true
   command: "find /var/html/www/docova  -type d -exec chmod 0755 {} \\;"
-  name: "Ensure directories are 0755"
+  name: "Ensure directories are 0755" 
 - 
   become: true
   command: "find /var/html/www/docova -type f -exec chmod 0644 {} \\;"
   name: "Ensure files are 0644"
+- 
+  become: true
+  command: "find /docova/web/ -type f -exec chmod 0755 {} \\;"
+  name: "Ensure files are 0755"
+- 
+  become: true
+  command: "find /docova/var/cache/ -type f -exec chmod 0755 {} \\;"
+  name: "Ensure files are 0755"
+- 
+  become: true
+  command: "find /docova/src/docova/docovabundle/Agents -type f -exec chmod 0755 {} \\;"
+  name: "Ensure files are 0755"
+ - 
+  become: true
+  command: "find /docova/src/docova/docovabundle/Resources/public/css/custom/ -type f -exec chmod 0755 {} \\;"
+  name: "Ensure files are 0755" 
+ - 
+  become: true
+  command: "find /docova/src/docova/docovabundle/Resources/public/images -type f -exec chmod 0755 {} \\;"
+  name: "Ensure files are 0755" 
+ - 
+  become: true
+  command: "find /docova/src/docova/docovabundle/Resources/public/js/custom -type f -exec chmod 0755 {} \\;"
+  name: "Ensure files are 0755"
+ - 
+  become: true
+  command: "find /docova/src/docova/docovabundle/Resources/views/DesignElements -type f -exec chmod 0755 {} \\;"
+  name: "Ensure files are 0755"
+- 
+  become: true
+  command: "find /docova/src/docova/docovabundle/Resources/views/Subform -type f -exec chmod 0755 {} \\;"
+  name: "Ensure files are 0755"
 - 
   become: true
   name: Changing perm of "/var/html/www/docova/autoindex.sh", adding "+x"
@@ -72,7 +104,6 @@
   become: true
   name: Changing perm of "/var/html/www/docova/dailylifecycle.sh", adding "+x"
   file: dest=/var/html/www/docova/dailylifecycle.sh mode=a+x
-  
 - 
   become: true
   command: "find /var/html/www/docova/var/logs  -type d -exec chmod 0777 {} \\;"
