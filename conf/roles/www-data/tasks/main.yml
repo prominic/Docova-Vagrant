@@ -90,7 +90,7 @@
   name: "Ensure files are 0755"
 - 
   become: true
-  command: "find/var/html/www/docova/src/Docova/DocovaBundle/Resources/views/Subform -type f -exec chmod 0755 {} \\;"
+  command: "find /var/html/www/docova/src/Docova/DocovaBundle/Resources/views/Subform -type f -exec chmod 0755 {} \\;"
   name: "Ensure files are 0755"
 - 
   become: true
