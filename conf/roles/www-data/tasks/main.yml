@@ -62,11 +62,11 @@
   name: "Ensure files are 0644"
 - 
   become: true
-  command: "find /docova/web/ -type f -exec chmod 0755 {} \\;"
+  command: "find /docova/web -type f -exec chmod 0755 {} \\;"
   name: "Ensure files are 0755"
 - 
   become: true
-  command: "find /docova/var/cache/ -type f -exec chmod 0755 {} \\;"
+  command: "find /docova/var/cache -type f -exec chmod 0755 {} \\;"
   name: "Ensure files are 0755"
 - 
   become: true
