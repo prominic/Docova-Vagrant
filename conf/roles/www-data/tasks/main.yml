@@ -72,19 +72,19 @@
   become: true
   command: "find /docova/src/docova/docovabundle/Agents -type f -exec chmod 0755 {} \\;"
   name: "Ensure files are 0755"
- - 
+- 
   become: true
   command: "find /docova/src/docova/docovabundle/Resources/public/css/custom/ -type f -exec chmod 0755 {} \\;"
   name: "Ensure files are 0755" 
- - 
+- 
   become: true
   command: "find /docova/src/docova/docovabundle/Resources/public/images -type f -exec chmod 0755 {} \\;"
   name: "Ensure files are 0755" 
- - 
+- 
   become: true
   command: "find /docova/src/docova/docovabundle/Resources/public/js/custom -type f -exec chmod 0755 {} \\;"
   name: "Ensure files are 0755"
- - 
+- 
   become: true
   command: "find /docova/src/docova/docovabundle/Resources/views/DesignElements -type f -exec chmod 0755 {} \\;"
   name: "Ensure files are 0755"
