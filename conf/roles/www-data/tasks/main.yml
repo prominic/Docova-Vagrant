@@ -72,14 +72,6 @@
   become: true
   name: Changing perm of "/var/html/www/docova/dailylifecycle.sh", adding "+x"
   file: dest=/var/html/www/docova/dailylifecycle.sh mode=a+x
-- 
-  become: true
-  command: "chmod +x /var/html/www/docova/agentrunner.sh;"
-  name: "Ensure Cron jobs can execute"
-- 
-  become: true
-  command: "chmod +x /var/html/www/docova/dailylifecycle.sh;"
-  name: "Ensure Cron jobs can execute"
   
 - 
   become: true
