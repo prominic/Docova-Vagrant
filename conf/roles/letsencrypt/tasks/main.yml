@@ -52,7 +52,8 @@
     name: nginx
     state: restarted
     
-- name: Send back VM completion request to Docova.com
+- 
+  name: "Send back VM completion request to Docova.com"
   uri:
     url: https://docova.com/wp-admin/admin-ajax.php
     method: POST
