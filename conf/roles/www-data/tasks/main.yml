@@ -66,6 +66,10 @@
   name: "Ensure files are www-data"
 - 
   become: true
+  command: "find /var/html/www/docova -type d -exec chown www-data:www-data {} \\;"
+  name: "Ensure files are www-data"
+- 
+  become: true
   command: "find /var/html/www/docova/web -type f -exec chmod 0755 {} \\;"
   name: "Ensure files are 0755"
 - 
