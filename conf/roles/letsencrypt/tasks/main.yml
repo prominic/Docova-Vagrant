@@ -47,8 +47,8 @@
       line: "    ssl_ciphers HIGH:!aNULL:!MD5;"
       regexp: "    #ssl_ciphers"
 - 
-  name: Restart service Nginx, in all cases
-  service:
+  name: "Restart service Nginx, in all cases"
+  service: 
     name: nginx
     state: restarted
 - 
