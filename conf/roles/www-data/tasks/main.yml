@@ -62,8 +62,16 @@
   name: "Ensure files are 0644"
 - 
   become: true
-  command: "chmod +x /var/html/www/docova/autoindex.sh;"
-  name: "Ensure Cron jobs can execute"
+  name: Changing perm of "/var/html/www/docova/autoindex.sh", adding "+x"
+  file: dest=/var/html/www/docova/autoindex.sh mode=a+x
+- 
+  become: true
+  name: Changing perm of "/var/html/www/docova/agentrunner.sh", adding "+x"
+  file: dest=/var/html/www/docova/agentrunner.sh mode=a+x
+- 
+  become: true
+  name: Changing perm of "/var/html/www/docova/dailylifecycle.sh", adding "+x"
+  file: dest=/var/html/www/docova/dailylifecycle.sh mode=a+x
 - 
   become: true
   command: "chmod +x /var/html/www/docova/agentrunner.sh;"
