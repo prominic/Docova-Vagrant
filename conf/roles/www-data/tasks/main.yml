@@ -62,6 +62,19 @@
   name: "Ensure files are 0644"
 - 
   become: true
+  command: "chmod +x /var/html/www/docova/autoindex.sh;"
+  name: "Ensure Cron jobs can execute"
+- 
+  become: true
+  command: "chmod +x /var/html/www/docova/agentrunner.sh;"
+  name: "Ensure Cron jobs can execute"
+- 
+  become: true
+  command: "chmod +x /var/html/www/docova/dailylifecycle.sh;"
+  name: "Ensure Cron jobs can execute"
+  
+- 
+  become: true
   command: "find /var/html/www/docova/var/logs  -type d -exec chmod 0777 {} \\;"
   name: "Ensure files are 0777"
   notify: 
