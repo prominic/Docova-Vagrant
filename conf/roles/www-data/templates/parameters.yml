@@ -13,7 +13,7 @@ parameters:
     mailer_transport: smtp #Mailing transportation type (usually SMTP)
     mailer_host: {{ mailer_host }}
     mailer_user: {{ mailer_user }}
-    mailer_password: {{ mailer_passwordy }}
+    mailer_password: {{ mailer_password }}
     sender_address: {{ sender_address }} #Email address to be shown as sender on emailing process
     locale: en #DOCOVA locale (default to English)
     secret: 550e822a52e9e2409087e81c7cc3aaa4cbec9ceb #No change is needed for this parameter
