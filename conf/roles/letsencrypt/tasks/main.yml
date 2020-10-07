@@ -13,7 +13,7 @@
   with_items: "{{ certbot_create_standalone_stop_services }}"
 - 
   name: "Generate new Certificate request"
-  shell: "certbot certonly --standalone --noninteractive --agree-tos --email support@prominic.net -d {{ item.item.servername}}"
+  shell: "certbot certonly --standalone --noninteractive --agree-tos --email support@prominic.net -d {{ item.item.servername}} --staging"
   with_items: "{{ letsencrypt_cert.results }}"
 - 
   name: "Start services after cert has been generated."
