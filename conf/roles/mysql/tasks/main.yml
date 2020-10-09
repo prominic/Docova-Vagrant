@@ -6,6 +6,7 @@
     password: "{{ database_password }}"
     priv: "*.*:ALL"
   name: "Create mysql user"
+  no_log: true
 - 
   become: true
   mysql_db: 
