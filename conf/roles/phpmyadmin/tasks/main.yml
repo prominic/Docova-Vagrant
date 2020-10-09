@@ -1,32 +1,5 @@
 --- 
 - 
-  apt: 
-    update_cache: yes
-- 
-  apt: 
-    name: phpmyadmin
-  name: "ensure phpmyadmin package is installed"
-
-- 
-  changed_when: false
-  name: "check if nginx is installed"
-  register: nginx_conf_dir
-  stat: 
-    path: /etc/nginx/conf.d
-- 
-  file: 
-    path: /etc/nginx/global.d
-    state: directory
-  name: "ensure directory for global nginx configuration files exists"
-  when: nginx_conf_dir.stat.exists
-- 
-  name: "ensure phpmyadmin configuration for nginx is installed"
-  notify: "restart nginx"
-  template: 
-    dest: /etc/nginx/global.d/phpmyadmin.conf
-    src: nginx.conf.j2
-  when: nginx_conf_dir.stat.exists
-- 
   name: "ensure phpmyadmin configuration is installed"
   template: 
     dest: /etc/phpmyadmin/conf.d/custom.php
