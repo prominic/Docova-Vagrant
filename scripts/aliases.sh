@@ -33,5 +33,6 @@ echo "alias ..='cd ..'
 alias ...='cd ../..'
 alias h='cd ~'
 alias c='clear'
-sudo apt-get install python-apt tee -y 
+sudo apt-get install python-apt -y 
+sudo apt-get install tee -y
 alias ll='ls -la'" | tee -a /home/vagrant/.bash_aliases
