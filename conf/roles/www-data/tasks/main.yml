@@ -68,47 +68,51 @@
 - 
   become: true
   command: "find /var/html/www/docova -type f -exec chmod 0644 {} \\;"
-  name: "Ensure files are 0644"
+  name: "Ensuring all files in /var/html/www/docova are set to permissions of: 0755"
 - 
   become: true
   command: "find /var/html/www/docova -type f -exec chown www-data:www-data {} \\;"
-  name: "Ensure files are www-data"
+  name: "Ensuring all filesin /var/html/www/docova are owned by: www-data"
 - 
   become: true
   command: "find /var/html/www/docova -type d -exec chown www-data:www-data {} \\;"
-  name: "Ensure files are www-data"
+  name: "Ensuring all directories in /var/html/www/docova are owned by: www-data"
 - 
   become: true
   command: "find /var/html/www/docova/web -type f -exec chmod 0755 {} \\;"
-  name: "Ensure files are 0755"
+  name: "Ensuring all files in /var/html/www/docova/web are set to permissions of: 0755"
 - 
   become: true
   command: "find /var/html/www/docova/var/cache -type f -exec chmod 0755 {} \\;"
-  name: "Ensure files are 0755"
+  name: "Ensuring all files in /var/html/www/docova/var/cachefiles are set to permissions of: 0755"
 - 
   become: true
   command: "find /var/html/www/docova/src/Docova/DocovaBundle/Agents -type f -exec chmod 0755 {} \\;"
-  name: "Ensure files are 0755"
+  name: "Ensuring all files in /var/html/www/docova/src/Docova/DocovaBundle/Agents are set to permissions of: 0755"
 - 
   become: true
   command: "find /var/html/www/docova/src/Docova/DocovaBundle/Resources/public/css/custom -type f -exec chmod 0755 {} \\;"
-  name: "Ensure files are 0755"
+  name: "Ensuring all files in /var/html/www/docova/src/Docova/DocovaBundle/Resources/public/css/custom are set to permissions of: 0755"
 - 
   become: true
   command: "find /var/html/www/docova/src/Docova/DocovaBundle/Resources/public/images -type f -exec chmod 0755 {} \\;"
-  name: "Ensure files are 0755"
+  name: "Ensuring all files in /var/html/www/docova/src/Docova/DocovaBundle/Resources/public/images are set to permissions of: 0755"
 - 
   become: true
   command: "find /var/html/www/docova/src/Docova/DocovaBundle/Resources/public/js/custom -type f -exec chmod 0755 {} \\;"
-  name: "Ensure files are 0755"
+  name: "Ensuring all files in /var/html/www/docova/src/Docova/DocovaBundle/Resources/public/js/custom are set to permissions of: 0755"
 - 
   become: true
   command: "find /var/html/www/docova/src/Docova/DocovaBundle/Resources/views/DesignElements -type f -exec chmod 0755 {} \\;"
-  name: "Ensure files are 0755"
+  name: "Ensuring all files in /var/html/www/docova/src/Docova/DocovaBundle/Resources/views/DesignElements are set to permissions of: 0755"
 - 
   become: true
   command: "find /var/html/www/docova/src/Docova/DocovaBundle/Resources/views/Subform -type f -exec chmod 0755 {} \\;"
-  name: "Ensure files are 0755"
+  name: "Ensuring all files in /var/html/www/docova/src/Docova/DocovaBundle/Resources/views/Subform are set to permissions of: 0755"
+- 
+  become: true
+  command: "find /var/html/www/docova/cmd/*.sh -type f -exec chmod 755 {} \\;"
+  name: "Ensuring Command Scripts are executable"
 - 
   become: true
   file: "dest=/var/html/www/docova/autoindex.sh mode=a+x"
