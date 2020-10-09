@@ -27,3 +27,4 @@
   template: 
     dest: /etc/phpmyadmin/conf.d/custom.php
     src: config.php.j2
+  notify: "reload nginx"
