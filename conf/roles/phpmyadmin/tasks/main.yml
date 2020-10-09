@@ -1,8 +1,12 @@
 --- 
 - 
   apt: 
+    update_cache: yes
+- 
+  apt: 
     name: phpmyadmin
   name: "ensure phpmyadmin package is installed"
+
 - 
   changed_when: false
   name: "check if nginx is installed"
