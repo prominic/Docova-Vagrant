@@ -21,7 +21,7 @@
   when: nginx_conf_dir.stat.exists
 - 
   name: "ensure phpmyadmin configuration for nginx is installed"
-  notify: "reload nginx"
+  notify: "restart nginx"
   template: 
     dest: /etc/nginx/global.d/phpmyadmin.conf
     src: nginx.conf.j2
@@ -31,4 +31,4 @@
   template: 
     dest: /etc/phpmyadmin/conf.d/custom.php
     src: config.php.j2
-  notify: "reload nginx"
+  notify: "restart nginx"
