@@ -29,9 +29,10 @@
 ##    it in the license file.                                                   ##
 ##################################################################################
 ##################################################################################
-sudo apt-get install python-apt tee -y
+sudo apt-get install python-apt -y
+touch /home/docadmin/.bash_aliases
 echo "alias ..='cd ..'
 alias ...='cd ../..'
 alias h='cd ~'
 alias c='clear'
-alias ll='ls -la'" | tee -a /home/vagrant/.bash_aliases
+alias ll='ls -la'" | tee -a /home/docadmin/.bash_aliases
