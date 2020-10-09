@@ -1,1 +1,7 @@
 ---
+- name: Ensure phpMyAdmin is installed.
+  yum:
+    name: phpmyadmin
+    state: present
+    enablerepo: "epel"
+  notify: restart nginx
