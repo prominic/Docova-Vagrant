@@ -111,7 +111,7 @@
   name: "Ensuring all files in /var/html/www/docova/src/Docova/DocovaBundle/Resources/views/Subform are set to permissions of: 0755"
 - 
   become: true
-  command: "find /var/html/www/docova/cmd/*.sh -type f -exec chmod 755 {} \\;"
+  command: "find /var/html/www/docova/cmd/ -type f -exec chmod 755 {} \\;"
   name: "Ensuring Command Scripts are executable"
 - 
   become: true
