@@ -1,7 +1,18 @@
 --- 
 - 
-  name: "ensure phpmyadmin configuration is installed"
-  template: 
-    dest: /etc/phpmyadmin/conf.d/custom.php
-    src: config.php.j2
-  notify: "restart nginx"
+  set_fact: 
+    my_pass: "{{ lookup('password', '/dev/null length=32 chars=ascii_letters') }}"
+- 
+  become: true
+  command: "mv /usr/share/phpmyadmin/config.sample.inc.php /usr/share/phpmyadmin/config.inc.php"
+  name: "Setting up PHP configuration"
+- 
+  lineinfile: 
+    dest: /usr/share/phpmyadmin/config.inc.php
+    line: "{{ item.line }}"
+    regexp: "{{ item.regexp }}"
+  name: "Setting Unique Key"
+  with_items: 
+    - 
+      line: "$cfg['blowfish_secret'] = '{{ my_pass }}';"
+      regexp: "$cfg['blowfish_secret'] = '';"
