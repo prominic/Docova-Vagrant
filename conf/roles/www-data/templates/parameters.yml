@@ -27,3 +27,4 @@ parameters:
     client_directory: {{ client_directory }} #123-123-123-123 #If client wants SSO enabled in DOCOVA, their Client Directory code should be set here
     google_api_key: {{ google_api_key }} #If client wants to use Google Map API in DOCOVA, their API key should be set here
     weather_api_key: {{ weather_api_key }} #If client wants to use Weather API in DOCOVA, their API key should be set here
+    appstore_id: {{ appstore_id }}
