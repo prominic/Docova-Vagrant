@@ -36,6 +36,9 @@
     - 
       line: "    mailer_password: {{mailer_password}}"
       regexp: "mailer_password:"
+    - 
+      line: "    sender_address: {{sender_address}}"
+      regexp: "sender_address:"
 - 
   become: true
   name: "Generating init_client_preferences with the following parameters: User: {{ clientadminuser }} Pass: {{clientadminpass}} "
