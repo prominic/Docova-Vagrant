@@ -118,15 +118,15 @@
   name: "Ensuring Command Scripts are executable"
 - 
   become: true
-  file: "dest=/var/html/www/docova/autoindex.sh mode=a+x"
+  file: "dest=/var/html/www/docova/cmd/autoindex.sh mode=a+x"
   name: "Changing perm of \"/var/html/www/docova/cmd/autoindex.sh\", adding \"+x\""
 - 
   become: true
-  file: "dest=/var/html/www/docova/agentrunner.sh mode=a+x"
+  file: "dest=/var/html/www/docova/cmd/agentrunner.sh mode=a+x"
   name: "Changing perm of \"/var/html/www/docova/cmd/agentrunner.sh\", adding \"+x\""
 - 
   become: true
-  file: "dest=/var/html/www/docova/dailylifecycle.sh mode=a+x"
+  file: "dest=/var/html/www/docova/cmd/dailylifecycle.sh mode=a+x"
   name: "Changing perm of \"/var/html/www/docova/cmd/dailylifecycle.sh\", adding \"+x\""
 - 
   become: true
